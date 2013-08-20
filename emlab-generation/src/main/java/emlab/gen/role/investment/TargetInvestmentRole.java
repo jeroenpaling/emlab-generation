@@ -42,17 +42,17 @@ import emlab.gen.repository.Reps;
 public class TargetInvestmentRole extends GenericInvestmentRole<TargetInvestor> {
 
     @Transient
-    @Autowired Reps reps;
+    @Autowired
     Reps reps;
 
     @Override
     @Transactional
     public void act(TargetInvestor targetInvestor) {
 
-        for(PowerGeneratingTechnologyTarget target : targetInvestor.getPowerGenerationTechnologyTargets()){
+        for (PowerGeneratingTechnologyTarget target : targetInvestor.getPowerGenerationTechnologyTargets()) {
             PowerGeneratingTechnology pgt = target.getPowerGeneratingTechnology();
-            long futureTimePoint = getCurrentTick()+pgt.getExpectedLeadtime()+pgt.getExpectedPermittime();
-            double expectedInstalledCapacity = reps.powerPlantRepository.calculateCapacityOfExpectedOperationalPowerPlantsInMarketAndTechnology(targetInvestor.getInvestorMarket(), pgt, futureTimePoint);
+            long futureTimePoint = getCurrentTick() + pgt.getExpectedLeadtime() + pgt.getExpectedPermittime();
+            double expectedInstalledCapacity = reps.powerPlantRepository
                     .calculateCapacityOfExpectedOperationalPowerPlantsInMarketAndTechnology(
                             targetInvestor.getInvestorMarket(), pgt, futureTimePoint);
             double pgtNodeLimit = Double.MAX_VALUE;
@@ -71,9 +71,9 @@ public class TargetInvestmentRole extends GenericInvestmentRole<TargetInvestor> 
                 installedCapacityDeviation = pgtNodeLimit - expectedInstalledCapacity;
             }
 
-            if (installedCapacityDeviation > 0 && installedCapacityDeviation > pgt.getCapacity()) {
+            if (installedCapacityDeviation > 0) {
 
-                double powerPlantCapacityRatio = installedCapacityDeviation/pgt.getCapacity();
+                double powerPlantCapacityRatio = installedCapacityDeviation / pgt.getCapacity();
 
                 PowerPlant plant = new PowerPlant();
 
@@ -86,12 +86,13 @@ public class TargetInvestmentRole extends GenericInvestmentRole<TargetInvestor> 
 
                 double investmentCostPayedByEquity = plant.getActualInvestedCapital()
                         * (1 - targetInvestor.getDebtRatioOfInvestments()) * powerPlantCapacityRatio;
-                double downPayment = investmentCostPayedByEquity;
+                double investmentCostPayedByDebt = plant.getActualInvestedCapital()
                         * targetInvestor.getDebtRatioOfInvestments() * powerPlantCapacityRatio;
+                double downPayment = investmentCostPayedByEquity * powerPlantCapacityRatio;
                 createSpreadOutDownPayments(targetInvestor, manufacturer, downPayment, plant);
 
                 double amount = determineLoanAnnuities(investmentCostPayedByDebt, plant.getTechnology()
-                        targetInvestor.getLoanInterestRate());
+                        .getDepreciationTime(), targetInvestor.getLoanInterestRate());
                 // logger.warn("Loan amount is: " + amount);
                 Loan loan = reps.loanRepository.createLoan(targetInvestor, bigbank, amount, plant.getTechnology()
                         .getDepreciationTime(), getCurrentTick(), plant);
