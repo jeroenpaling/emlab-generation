@@ -201,6 +201,8 @@ public class ElectricityProducerFactory implements InitializingBean {
 
                 PowerPlant plant = createPowerPlant(technology, energyProducer, getNodeForZone(market.getZone()),
                         siteLocation);
+		// logger.warn("powerplant placed at location {} of tech {}", siteLocation.getName(), technology);
+
                 requiredCapacityForTechnology -= plant.getAvailableCapacity(0);
 
             }

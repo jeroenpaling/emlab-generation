@@ -225,13 +225,13 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
             } else if ((expectedInstalledCapacityOfTechnologyInNode + plant.getActualNominalCapacity()) > pgtNodeLimit) {
 
             } else if (technology.getLocationFailure() == 0) {
-                logger.warn(agent
-                        + "will not invest in {} technology because there was no suitable location previously",
-                        technology);
+                //logger.warn(agent
+                //        + "will not invest in {} technology because there was no suitable location previously",
+                //        technology);
 
             } else if (plant.getLocation().getMaximumCcsInNode() - getPlacesLeftForCCS() <= 0) {
-                logger.warn(agent + "will not invest in {} technology because there is no more capacity for CCS",
-                        technology);
+                //logger.warn(agent + "will not invest in {} technology because there is no more capacity for CCS",
+                //        technology);
                 setLocationFailureTimer(technology);
 
             } else if (expectedOwnedCapacityInMarketOfThisTechnology > expectedOwnedTotalCapacityInMarket
@@ -450,7 +450,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
         // For all location check if they are suitable for a certain technology
         // and have room for a new plant if so calculate utility and rank
         // location top 3 according to utility
-        logger.warn(agent + "starts to look for locations for technology {} ", bestTechnology);
+        // logger.warn(agent + "starts to look for locations for technology {} ", bestTechnology);
 
         if (bestTechnology != null) {
             for (Location siteLocation : reps.genericRepository.findAll(Location.class)) {
@@ -595,7 +595,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
             }
 
             if (locationrank1 != null) {
-                logger.warn(agent + " found locations for technology and moves to permit procedure");
+                //logger.warn(agent + " found locations for technology and moves to permit procedure");
             } else {
                 setLocationFailureTimer(bestTechnology);
             }
@@ -613,11 +613,11 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
             while (LocationChosen == false && permitFailure == false) {
 
                 if (locationrank1 != null) {
-                    logger.warn(agent
-                            + " started permit negotiation for technology {} at Location {} npv {} and delayed npv {}",
-                            bestTechnology, locationrank1.getName());
-                    logger.warn(agent + " has npv {} and delayed npv {}", bestTechnology.getNpv(),
-                            bestTechnology.getNpvDelay());
+                    //logger.warn(agent
+                    //        + " started permit negotiation for technology {} at Location {} npv {} and delayed npv {}",
+                    //        bestTechnology, locationrank1.getName());
+                    //logger.warn(agent + " has npv {} and delayed npv {}", bestTechnology.getNpv(),
+                    //        bestTechnology.getNpvDelay());
 
                     // create variables for the utility functions
                     double compensationGovernment = 0d;
@@ -636,22 +636,22 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                         }
                     }
 
-                    logger.warn(agent + " has to deal with the province of {} ", AuthorizedGovernment.getName());
+                    //logger.warn(agent + " has to deal with the province of {} ", AuthorizedGovernment.getName());
 
                     double plantsOfTechnology = getAmountofPlantsinProvinceforTechnology(AuthorizedGovernment,
                             bestTechnology, getCurrentTick());
 
-                    logger.warn(AuthorizedGovernment.getName() + " has {} plants of the technology in its area",
-                            plantsOfTechnology);
+                    //logger.warn(AuthorizedGovernment.getName() + " has {} plants of the technology in its area",
+                    //        plantsOfTechnology);
 
                     // Environmental compensation to Local government
 
                     double UtilityGovernment = calculateAndSetUtilityGovernment(AuthorizedGovernment, bestTechnology,
                             compensationGovernment, plantsOfTechnology);
 
-                    logger.warn(AuthorizedGovernment.getName()
-                            + " Has an utility for the proposed plant of {} with costs of {} ", UtilityGovernment,
-                            bestTechnology.getEnvironmentalCosts());
+                    //logger.warn(AuthorizedGovernment.getName()
+                    //        + " Has an utility for the proposed plant of {} with costs of {} ", UtilityGovernment,
+                    //        bestTechnology.getEnvironmentalCosts());
                     // compensation payments until local government is no worse
                     // off
                     // than when nothing would have been build
@@ -664,8 +664,8 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                                 / bestTechnology.getNpv();
                     }
 
-                    logger.warn(AuthorizedGovernment.getName() + " Has received {} as compensation",
-                            compensationGovernment);
+                    //logger.warn(AuthorizedGovernment.getName() + " Has received {} as compensation",
+                    //        compensationGovernment);
 
                     // delete all old local parties from previous negotiations
                     // (Review this with expert!)
@@ -685,7 +685,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                         // create empty list of local parties
                         ArrayList<LocationLocalParties> listLocals = new ArrayList<LocationLocalParties>();
                         // create local parties
-                        logger.warn(agent + " encountered a number of local parties of {}", AmountOfLocals);
+                        //logger.warn(agent + " encountered a number of local parties of {}", AmountOfLocals);
 
                         double investmentCost = bestTechnology.getInvestmentCost(getCurrentTick())
                                 * bestTechnology.getCapacity();
@@ -719,7 +719,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                             local.setFactorRandomParty((Math.abs(0.25 * randomnumber.nextGaussian() + 1)));
                             local.setUtilityLocalParty(calculateAndSetUtilityLocalParty(bestTechnology, locationrank1,
                                     local, investmentCost));
-                            logger.warn(local.getName() + " (A) Has Utility of {}", local.getUtilityLocalParty());
+                            //logger.warn(local.getName() + " (A) Has Utility of {}", local.getUtilityLocalParty());
                             listLocals.add(local);
                         }
                         // logger.warn(listLocals.size() +
@@ -786,10 +786,10 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                                         party.setUtilityLocalParty(calculateAndSetUtilityLocalParty(bestTechnology,
                                                 locationrank1, party, investmentCost));
 
-                                        logger.warn(
-                                                "local party {} has received and now has utility of {} and got compensation"
-                                                        + party.getCompensationLocalParty(), party.getName(),
-                                                party.getUtilityLocalParty());
+                                        //logger.warn(
+                                          //      "local party {} has received and now has utility of {} and got compensation"
+                                            //            + party.getCompensationLocalParty(), party.getName(),
+                                             //   party.getUtilityLocalParty());
 
                                     }
                                 }
@@ -818,12 +818,12 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
 
                                 }
                                 averageUtility = averageUtilityLocals / listLocals.size();
-                                logger.warn(averageUtility + " Average utility is with amount of locals {}",
-                                        listLocals.size());
+                                //logger.warn(averageUtility + " Average utility is with amount of locals {}",
+                                //        listLocals.size());
                                 locationrank1.setAverageUtility(averageUtility);
 
-                                logger.warn(agent + "payed compensation of {} to local party {} to smooth the process",
-                                        minLocalUtility.getCompensationLocalParty(), minLocalUtility.getName());
+                                //logger.warn(agent + "payed compensation of {} to local party {} to smooth the process",
+                                //        minLocalUtility.getCompensationLocalParty(), minLocalUtility.getName());
 
                                 // update utility function electricity producer,
                                 // based
@@ -838,11 +838,11 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                                         / (bestTechnology.getNpv());
                                 agent.setCompensationElectricityProducer(compensationElectricityProducer);
 
-                                logger.warn(agent + " has a utility of {} and average utility locals of {}",
-                                        utilityElectricityProducer, averageUtility);
+                                //logger.warn(agent + " has a utility of {} and average utility locals of {}",
+                                //        utilityElectricityProducer, averageUtility);
 
                             }
-                            logger.warn(averageUtility + "is now the average utility of the locals");
+                            //logger.warn(averageUtility + "is now the average utility of the locals");
                         } else {
                             utilityElectricityProducer = (bestTechnology.getNpv() + compensationElectricityProducer)
                                     / bestTechnology.getNpv();
@@ -866,8 +866,8 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                     }
 
                 } else {
-                    logger.warn(agent + " did not invest in technology {} , because the permit negotiation failed",
-                            bestTechnology);
+                    //logger.warn(agent + " did not invest in technology {} , because the permit negotiation failed",
+                    //        bestTechnology);
 
                     setLocationFailureTimer(bestTechnology);
                     permitFailure = true;
@@ -875,13 +875,13 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                 }
             }
 
-            // permit procedure should be fitted here
+         
 
             if (bestTechnology != null && LocationChosen != false) {
                 // logger.warn("Agent {} invested in technology {} at tick " +
                 // getCurrentTick(), agent, bestTechnology);
-                logger.warn(agent + "invested in technology {} at location {}", bestTechnology,
-                        ChosenLocation.getName());
+                //logger.warn(agent + "invested in technology {} at location {}", bestTechnology,
+                //        ChosenLocation.getName());
 
                 PowerPlant plant = new PowerPlant();
 
@@ -1193,8 +1193,8 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
         // site.getWeightFactorWealth() + " wealth");
         // logger.warn((((tech.getTechnologyPreference() - 61) / 57) *
         // site.getWeightFactorTechPref()) + " tech pref");
-        logger.warn(((1 / (1 + Math.exp(-((((local.getCompensationLocalParty()) / (investmentCost * site
-                .getEffectivenessCompensation())) * 20) - 10)))) * site.getWeightFactorCompensation()) + "compensation");
+        //logger.warn(((1 / (1 + Math.exp(-((((local.getCompensationLocalParty()) / (investmentCost * site
+        //        .getEffectivenessCompensation())) * 20) - 10)))) * site.getWeightFactorCompensation()) + "compensation");
         return utilityLocals;
     }
 

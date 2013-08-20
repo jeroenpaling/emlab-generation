@@ -330,4 +330,11 @@ public class Location {
         this.windPower = windPower;
     }
 
+    @Override
+    public String toString() {
+        return this.getName();
+    }
+
+
+
 }
