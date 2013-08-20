@@ -26,6 +26,8 @@ import emlab.gen.trend.HourlyCSVTimeSeries;
 @NodeEntity
 public class PowerGridNode {
 
+    String name;
+
     @RelatedTo(type = "REGION", elementClass = Zone.class, direction = Direction.OUTGOING)
     private Zone zone;
 
@@ -34,6 +36,14 @@ public class PowerGridNode {
 
     private double capacityMultiplicationFactor;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     private double maximumCcsInNode;
 
     public double getMaximumCcsInNode() {
