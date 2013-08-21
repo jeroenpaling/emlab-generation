@@ -525,7 +525,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                         // + bestTechnology,
                         // siteLocation.getName());
                     } else if (siteLocation.getPossiblePlants()
-                            - calculateNumberOfPlantsAtLocation(siteLocation, getCurrentTick()) <= 0) {
+                            - calculateNumberOfPlantsAtLocationOld(siteLocation, getCurrentTick()) <= 0) {
                         // logger.warn("location {} is not suitable for technology "
                         // + bestTechnology,
                         // siteLocation.getName());
@@ -539,7 +539,7 @@ public class InvestInPowerGenerationTechnologiesRole<T extends EnergyProducer> e
                         // + bestTechnology,
                         // siteLocation.getName());
                     } else if (siteLocation.getPossiblePlants()
-                            - calculateNumberOfPlantsAtLocation(siteLocation, getCurrentTick()) <= 0) {
+                            - calculateNumberOfPlantsAtLocationOld(siteLocation, getCurrentTick()) <= 0) {
                         // logger.warn("location {} is not suitable for technology "
                         // + bestTechnology,
                         // siteLocation.getName());
