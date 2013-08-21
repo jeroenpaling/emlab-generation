@@ -39,6 +39,36 @@ public class LocalGovernment {
 
     private double effectivenessCompensationGov;
 
+    private double weightFactorWealth;
+
+    private double weightFactorDensity;
+
+    private double weightFactorPreference;
+
+    public double getWeightFactorWealth() {
+        return weightFactorWealth;
+    }
+
+    public void setWeightFactorWealth(double weightFactorWealth) {
+        this.weightFactorWealth = weightFactorWealth;
+    }
+
+    public double getWeightFactorDensity() {
+        return weightFactorDensity;
+    }
+
+    public void setWeightFactorDensity(double weightFactorDensity) {
+        this.weightFactorDensity = weightFactorDensity;
+    }
+
+    public double getWeightFactorPreference() {
+        return weightFactorPreference;
+    }
+
+    public void setWeightFactorPreference(double weightFactorPreference) {
+        this.weightFactorPreference = weightFactorPreference;
+    }
+
     public double getEffectivenessCompensationGov() {
         return effectivenessCompensationGov;
     }
@@ -85,6 +115,11 @@ public class LocalGovernment {
 
     public void setWeightPrevious(double weightPrevious) {
         this.weightPrevious = weightPrevious;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 
 }
