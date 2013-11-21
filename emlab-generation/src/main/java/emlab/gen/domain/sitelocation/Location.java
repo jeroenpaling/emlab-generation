@@ -76,11 +76,17 @@ public class Location {
 
     private double plantPresent;
 
+    private double locationFailure;
+
+    private double locationFailureTimer;
+
     private double weightFactorWealth;
 
     private double weightFactorDensity;
 
     private double weightFactorTechPref;
+
+    private double countPermitFailures;
 
     private double weightFactorCompensation;
 
@@ -89,6 +95,24 @@ public class Location {
     private double effectivenessCompensation;
 
     private double AverageUtility;
+
+    private double permitTries;
+
+    public double getPermitTries() {
+        return permitTries;
+    }
+
+    public void setPermitTries(double permitTries) {
+        this.permitTries = permitTries;
+    }
+
+    public double getCountPermitFailures() {
+        return countPermitFailures;
+    }
+
+    public void setCountPermitFailures(double countPermitFailures) {
+        this.countPermitFailures = countPermitFailures;
+    }
 
     public double getDepthWater() {
         return depthWater;
@@ -112,6 +136,22 @@ public class Location {
 
     public void setAverageUtility(double averageUtility) {
         AverageUtility = averageUtility;
+    }
+
+    public double getLocationFailure() {
+        return locationFailure;
+    }
+
+    public void setLocationFailure(double locationFailure) {
+        this.locationFailure = locationFailure;
+    }
+
+    public double getLocationFailureTimer() {
+        return locationFailureTimer;
+    }
+
+    public void setLocationFailureTimer(double locationFailureTimer) {
+        this.locationFailureTimer = locationFailureTimer;
     }
 
     public boolean isOffShore() {
@@ -334,7 +374,5 @@ public class Location {
     public String toString() {
         return this.getName();
     }
-
-
 
 }
