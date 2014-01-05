@@ -38,6 +38,8 @@ public class PowerGridNode {
 
     private double compensationGovernment;
 
+    private double numberOfLocationAssessed;
+
     private double compensationLocals;
 
     private double minPopulationDensity;
@@ -83,6 +85,14 @@ public class PowerGridNode {
 
     private double timeNotUsingTech;
     private double timeNotUsingLocation;
+
+    public double getNumberOfLocationAssessed() {
+        return numberOfLocationAssessed;
+    }
+
+    public void setNumberOfLocationAssessed(double numberOfLocationAssessed) {
+        this.numberOfLocationAssessed = numberOfLocationAssessed;
+    }
 
     public double getTimeNotUsingTech() {
         return timeNotUsingTech;

@@ -15,9 +15,14 @@
  ******************************************************************************/
 package emlab.gen.domain.sitelocation;
 
+import java.util.Set;
+
+import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.NodeEntity;
+import org.springframework.data.neo4j.annotation.RelatedTo;
 
 import agentspring.simulation.SimulationParameter;
+import emlab.gen.domain.technology.Substance;
 
 /**
  * Representation of a location
@@ -48,7 +53,14 @@ public class Location {
 
     private double wealth;
 
+    @RelatedTo(type = "FUEL", elementClass = Substance.class, direction = Direction.OUTGOING)
+    private Set<Substance> feedstockAvailabilityList;
+
     private double qualityWater;
+
+    private double totalCompensationPayed;
+
+    private double localPartyCompensation;
 
     private double distanceGrid;
 
@@ -97,6 +109,30 @@ public class Location {
     private double AverageUtility;
 
     private double permitTries;
+
+    public double getLocalPartyCompensation() {
+        return localPartyCompensation;
+    }
+
+    public void setLocalPartyCompensation(double localPartyCompensation) {
+        this.localPartyCompensation = localPartyCompensation;
+    }
+
+    public double getTotalCompensationPayed() {
+        return totalCompensationPayed;
+    }
+
+    public void setTotalCompensationPayed(double totalCompensationPayed) {
+        this.totalCompensationPayed = totalCompensationPayed;
+    }
+
+    public Set<Substance> getfeedstockAvailabilityList() {
+        return feedstockAvailabilityList;
+    }
+
+    public void setfeedstockAvailabilityList(Set<Substance> feedstockAvailabilityList) {
+        this.feedstockAvailabilityList = feedstockAvailabilityList;
+    }
 
     public double getPermitTries() {
         return permitTries;

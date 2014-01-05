@@ -30,7 +30,7 @@ public class PowerGeneratingTechnology {
 
     private String name;
 
-    private double locationFailure;
+    private boolean technologyAvailability;
 
     @SimulationParameter(label = "Capacity (MW)", from = 0, to = 2000)
     private double capacity;
@@ -72,7 +72,9 @@ public class PowerGeneratingTechnology {
 
     private double employment;
 
-    private double locationFailureTime;
+    private boolean carbonCaptureRequired;
+
+    private double availableFromTick;
 
     private int expectedPermittime2;
 
@@ -97,6 +99,34 @@ public class PowerGeneratingTechnology {
     private boolean intermittent;
 
     private String FeedstockID;
+
+    private double compensationPayedTechnology;
+
+    private double numberOfInvestmentsInTechnology;
+
+    public double getCompensationPayedTechnology() {
+        return compensationPayedTechnology;
+    }
+
+    public void setCompensationPayedTechnology(double compensationPayedTechnology) {
+        this.compensationPayedTechnology = compensationPayedTechnology;
+    }
+
+    public double getNumberOfInvestmentsInTechnology() {
+        return numberOfInvestmentsInTechnology;
+    }
+
+    public void setNumberOfInvestmentsInTechnology(double numberOfInvestmentsInTechnology) {
+        this.numberOfInvestmentsInTechnology = numberOfInvestmentsInTechnology;
+    }
+
+    public boolean isCarbonCaptureRequired() {
+        return carbonCaptureRequired;
+    }
+
+    public void setCarbonCaptureRequired(boolean carbonCaptureRequired) {
+        this.carbonCaptureRequired = carbonCaptureRequired;
+    }
 
     public double getPreviousPermitExperience() {
         return previousPermitExperience;
@@ -367,20 +397,20 @@ public class PowerGeneratingTechnology {
         this.intermittent = intermittent;
     }
 
-    public double getLocationFailure() {
-        return locationFailure;
+    public boolean getTechnologyAvailability() {
+        return technologyAvailability;
     }
 
-    public void setLocationFailure(double locationFailure) {
-        this.locationFailure = locationFailure;
+    public void setTechnologyAvailability(boolean technologyAvailability) {
+        this.technologyAvailability = technologyAvailability;
     }
 
-    public double getLocationFailureTime() {
-        return locationFailureTime;
+    public double getAvailableFromTick() {
+        return availableFromTick;
     }
 
-    public void setLocationFailureTime(double locationFailureTime) {
-        this.locationFailureTime = locationFailureTime;
+    public void setAvailableFromTick(double availableFromTick) {
+        this.availableFromTick = availableFromTick;
     }
 
 }

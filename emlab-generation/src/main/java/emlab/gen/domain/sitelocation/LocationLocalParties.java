@@ -47,7 +47,7 @@ public class LocationLocalParties {
         return UtilityLocalParty;
     }
 
-    public void setUtilityLocalParty(double utilityLocalParty) {
+    public void setUtility(double utilityLocalParty) {
         UtilityLocalParty = utilityLocalParty;
     }
 
@@ -65,6 +65,11 @@ public class LocationLocalParties {
 
     public void setCompensationLocalParty(double compensationLocalParty) {
         CompensationLocalParty = compensationLocalParty;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 
 }

@@ -874,8 +874,8 @@
 		</property>
 	</bean>
 	
-	<bean id="coalPulverizedCSSInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0098011846" p:start="2457950" />
-	<bean id="coalPulverizedCSSFixedOperatingCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0099617099" p:start="74030" />
+	<bean id="coalPulverizedCSSInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0098011846" p:start="2450000" />
+	<bean id="coalPulverizedCSSFixedOperatingCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0099617099" p:start="740" />
 	<bean id="coalPulverizedCSSEfficiencyTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="0.0011744757" p:start=".35" />
 	
 	<bean id="igccCCS" class="emlab.gen.domain.technology.PowerGeneratingTechnology"
@@ -1087,7 +1087,7 @@
 		p:npvDelay="0">
 	</bean>
 	
-	<bean id="windInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0017610467" p:start="1214600" />
+	<bean id="windInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0017610467" p:start="12" />
 	<bean id="windFixedOperatingCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0004101736" p:start="18220" />
 	<bean id="windEfficiencyTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="0" p:start="1" />
 	

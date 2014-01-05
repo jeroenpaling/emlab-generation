@@ -59,7 +59,7 @@
 	<!-- PowerGrid -->
 	<bean id="beneluxNode" class="emlab.gen.domain.technology.PowerGridNode"
 	p:capacityMultiplicationFactor="1.0" p:maximumCcsInNode="10" 
-	p:compensationGovernment="100000" p:compensationLocals="10000" 
+	p:compensationGovernment="10000" p:compensationLocals="10000000000000" 
 	p:minPopulationDensity="21" p:deltaPopulationDensity="6110" p:maxPopulationDensity="6131"
 	p:minWealth="10.8" p:deltaWealth="12.4" p:maxWealth="23.2"
 	p:maxTechnologyPreference="61" p:deltaTechnologyPreference="57"
@@ -74,7 +74,7 @@
 	p:maxCompensationGovernmentPercentageOfInvestment="0.1"
 	p:minEmployment="0.379" p:deltaEmployment="2.843"
 	p:timeNotUsingTech="2" p:timeNotUsingLocation="3"
-	>
+	p:numberOfLocationAssessed="3">
 		<property name="zone" ref="nl" />
 	</bean>
 
@@ -486,7 +486,7 @@
 				</entry>
 			</map>
 		</property>
-		<property name="coallocations" >
+		<property name="coallocations">
 			<list>
 				<ref bean="Borselle" />
 				<ref bean="Borselle" />
@@ -840,9 +840,12 @@
 		p:peakSegmentDependentAvailability="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
-		p:feedstockID="Coal">
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
+		p:feedstockID="Coal"
+		p:carbonCaptureRequired="false"
+		p:npv="0"
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		>
 		<property name="fuels">
 			<set>
 				<ref bean="coal" />
@@ -877,11 +880,12 @@
 		p:previousPermitExperience="1"
 		p:employment="1.322"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:carbonCaptureRequired="false"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Coal"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		>
 		<property name="fuels">
 			<set>
 				<ref bean="lignite" />
@@ -913,11 +917,12 @@
 		p:employment="0.770"
 		p:previousPermitExperience="1"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Gas"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 		<property name="fuels">
 			<set>
 				<ref bean="coal" />
@@ -950,11 +955,12 @@
 		p:peakSegmentDependentAvailability="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Coal"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="true">
 		<property name="fuels">
 			<set>
 				<ref bean="coal" />
@@ -987,11 +993,12 @@
 		p:peakSegmentDependentAvailability="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Gas"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="true">
 		<property name="fuels">
 			<set>
 				<ref bean="coal" />
@@ -1024,11 +1031,12 @@
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Gas"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 		<property name="fuels">
 			<set>
 				<ref bean="naturalgas" />
@@ -1060,11 +1068,12 @@
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Gas"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="true">
 		<property name="fuels">
 			<set>
 				<ref bean="naturalgas" />
@@ -1096,11 +1105,12 @@
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Gas"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 		<property name="fuels">
 			<set>
 				<ref bean="naturalgas" />
@@ -1133,11 +1143,12 @@
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
 		p:intermittent="false"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Biomass"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 		<property name="fuels">
 			<set>
 				<ref bean="biomass" />
@@ -1169,11 +1180,12 @@
 		p:employment="0.378"
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Wind"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 	</bean>
 	
 	<bean id="windInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0017610467" p:start="1214600" />
@@ -1201,11 +1213,12 @@
 		p:employment="0.378"
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="OffShoreWind"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 	</bean>
 	
 	<bean id="windOffshoreInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.02058369" p:start="2450770" />
@@ -1232,11 +1245,12 @@
 		p:employment="0.497"
 		p:previousPermitExperience="1"
 		p:applicableForLongTermContract="true"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Sun"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 	</bean>
 	
 	<bean id="pvInvestmentCostTimeSeries" class="emlab.gen.trend.GeometricTrend" p:growthRate="-0.0247970888" p:start="2048300" />
@@ -1264,11 +1278,12 @@
 		p:technologyPreference="11"
 		p:employment="0.615"
 		p:previousPermitExperience="1"
-		p:locationFailure="1"
-		p:locationFailureTime="0"
+		p:technologyAvailability="true"
+		p:availableFromTick="0"
 		p:feedstockID="Nuclear"
 		p:npv="0"
-		p:npvDelay="0">
+		p:npvDelay="0" p:compensationPayedTechnology="0" p:numberOfInvestmentsInTechnology="0"		
+		p:carbonCaptureRequired="false">
 		<property name="fuels">
 			<set>
 				<ref bean="uranium" />
@@ -1314,8 +1329,17 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
+	
 	<bean id="Eemshaven" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Eemshaven" p:possiblePlants="10"
 		p:plantPresent="0"
@@ -1341,7 +1365,16 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="uranium" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Moerdijk" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Moerdijk" p:possiblePlants="4"
@@ -1368,7 +1401,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Borgum" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Borgum" p:possiblePlants="2"
@@ -1395,7 +1436,12 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Harculo" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Harculo" p:possiblePlants="3"
@@ -1422,7 +1468,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Nijmegen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Nijmegen" p:possiblePlants="4"
@@ -1449,7 +1503,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Utrechtstad" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Utrechtstad" p:possiblePlants="3"
@@ -1476,7 +1538,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Lelystad" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Lelystad" p:possiblePlants="6"
@@ -1503,7 +1573,13 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="biomass" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Velsen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Velsen" p:possiblePlants="4"
@@ -1530,7 +1606,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Hemweg" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Hemweg" p:possiblePlants="4"
@@ -1557,7 +1641,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Diemen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Diemen" p:possiblePlants="4"
@@ -1584,7 +1676,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="MaasvlakteI" class="emlab.gen.domain.sitelocation.Location"
 		p:name="MaasvlakteI" p:possiblePlants="6"
@@ -1611,7 +1711,16 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas"/>
+				<ref bean="lignite" />
+				<ref bean="uranium" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Galileistraat" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Galileistraat" p:possiblePlants="1"
@@ -1638,7 +1747,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Borselle" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Borselle" p:possiblePlants="4"
@@ -1665,7 +1782,18 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="uranium" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
+		
+
 	</bean>
 	<bean id="Amer" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Amer" p:possiblePlants="4"
@@ -1692,7 +1820,14 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Buggenum" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Buggenum" p:possiblePlants="2"
@@ -1719,7 +1854,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Maasbracht" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Maasbracht" p:possiblePlants="2"
@@ -1746,7 +1889,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Westland" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Westland" p:possiblePlants="2"
@@ -1773,7 +1924,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Geleen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Geleen" p:possiblePlants="1"
@@ -1800,7 +1959,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Delfzijl" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Delfzijl" p:possiblePlants="4"
@@ -1827,7 +1994,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="HavengebiedAmsterdam" class="emlab.gen.domain.sitelocation.Location"
 		p:name="HavengebiedAmsterdam" p:possiblePlants="2"
@@ -1854,7 +2029,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Rijnmond" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Rijnmond" p:possiblePlants="2"
@@ -1881,7 +2064,15 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+				<ref bean="lignite" />
+				<ref bean="biomass" />
+				<ref bean="coal" />
+			</set>
+		</property>
 	</bean>
 	<bean id="Terneuzen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Terneuzen" p:possiblePlants="2"
@@ -1908,7 +2099,12 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
+		<property name="feedstockAvailabilityList">
+			<set>
+				<ref bean="naturalgas" />
+			</set>
+		</property>
 	</bean>
 	<!-- Location for Wind Power Off-Shore -->
 	<bean id="Amalia" class="emlab.gen.domain.sitelocation.Location"
@@ -1938,10 +2134,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="BorseleoffShore" class="emlab.gen.domain.sitelocation.Location"
-		p:name="Borsele Off Shore" p:possiblePlants="3"
+		p:name="BorseleOffShore" p:possiblePlants="3"
 		p:plantPresent="0"
 		p:populationDensity="160"
 		p:wealth="14.4"
@@ -1967,7 +2163,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="HoekVanHollandI" class="emlab.gen.domain.sitelocation.Location"
 		p:name="HoekVanHollandI" p:possiblePlants="3"
@@ -1996,7 +2192,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="HoekVanHollandII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="HoekVanHollandII" p:possiblePlants="4"
@@ -2025,7 +2221,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="HoekVanHollandIII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="HoekVanHollandIII" p:possiblePlants="7"
@@ -2054,7 +2250,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="ScheveningenBuiten" class="emlab.gen.domain.sitelocation.Location"
 		p:name="ScheveningenBuiten" p:possiblePlants="4"
@@ -2083,7 +2279,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="RijnveldZuid" class="emlab.gen.domain.sitelocation.Location"
 		p:name="RijnveldZuid" p:possiblePlants="5"
@@ -2112,10 +2308,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="WestRijn" class="emlab.gen.domain.sitelocation.Location"
-		p:name="West-Rijn" p:possiblePlants="2"
+		p:name="WestRijn" p:possiblePlants="2"
 		p:plantPresent="0"
 		p:populationDensity="1503"
 		p:wealth="15.5"
@@ -2141,7 +2337,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Scheveningen5" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Scheveningen5" p:possiblePlants="1"
@@ -2170,7 +2366,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="RijnveldOost" class="emlab.gen.domain.sitelocation.Location"
 		p:name="RijnveldOost" p:possiblePlants="1"
@@ -2199,7 +2395,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="RijnveldNoord" class="emlab.gen.domain.sitelocation.Location"
 		p:name="RijnveldNoord" p:possiblePlants="1"
@@ -2228,7 +2424,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Beaufort" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Beaufort" p:possiblePlants="3"
@@ -2257,7 +2453,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="ScheveningenII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="ScheveningenII" p:possiblePlants="3"
@@ -2286,10 +2482,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="EnecoLuchterduinen" class="emlab.gen.domain.sitelocation.Location"
-		p:name="HoekVanHollandII" p:possiblePlants="1"
+		p:name="EnecoLuchterduinen" p:possiblePlants="1"
 		p:plantPresent="0"
 		p:populationDensity="1503"
 		p:wealth="15.5"
@@ -2315,10 +2511,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Breeveertien" class="emlab.gen.domain.sitelocation.Location"
-		p:name="HoekVanHollandII" p:possiblePlants="1"
+		p:name="Breeveertien" p:possiblePlants="1"
 		p:plantPresent="0"
 		p:populationDensity="1503"
 		p:wealth="15.5"
@@ -2344,7 +2540,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Q7" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Q7" p:possiblePlants="2"
@@ -2373,7 +2569,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Ijmuiden" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Ijmuiden" p:possiblePlants="2"
@@ -2402,7 +2598,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Q4" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Q4" p:possiblePlants="1"
@@ -2431,7 +2627,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="EgmondAanZee" class="emlab.gen.domain.sitelocation.Location"
 		p:name="EgmondAanZee" p:possiblePlants="1"
@@ -2460,7 +2656,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="CallandsoogOost" class="emlab.gen.domain.sitelocation.Location"
 		p:name="CallandsoogOost" p:possiblePlants="2"
@@ -2489,7 +2685,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="CallandsoogZuid" class="emlab.gen.domain.sitelocation.Location"
 		p:name="CallandsoogZuid" p:possiblePlants="3"
@@ -2518,7 +2714,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="CallandsoogWest" class="emlab.gen.domain.sitelocation.Location"
 		p:name="CallandsoogWest" p:possiblePlants="2"
@@ -2547,7 +2743,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="CallantsoogNoord" class="emlab.gen.domain.sitelocation.Location"
 		p:name="CallantsoogNoord" p:possiblePlants="3"
@@ -2576,7 +2772,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DenHelderI" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DenHelderI" p:possiblePlants="5"
@@ -2605,7 +2801,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DenHelderII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DenHelderII" p:possiblePlants="5"
@@ -2634,7 +2830,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DenHelderIII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DenHelderIII" p:possiblePlants="5"
@@ -2663,7 +2859,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DenHelderIIII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DenHelderIIII" p:possiblePlants="5"
@@ -2692,7 +2888,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="TrompOost" class="emlab.gen.domain.sitelocation.Location"
 		p:name="TrompOost" p:possiblePlants="4"
@@ -2721,10 +2917,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="TrompWest" class="emlab.gen.domain.sitelocation.Location"
-		p:name="DenHelderI" p:possiblePlants="4"
+		p:name="TrompWest" p:possiblePlants="4"
 		p:plantPresent="0"
 		p:populationDensity="1503"
 		p:wealth="15.5"
@@ -2750,7 +2946,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="BrownRidgeOost" class="emlab.gen.domain.sitelocation.Location"
 		p:name="BrownRidgeOoost" p:possiblePlants="3"
@@ -2779,7 +2975,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="BreeveertienII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="BreeveertienII" p:possiblePlants="3"
@@ -2808,7 +3004,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="OstersBankI" class="emlab.gen.domain.sitelocation.Location"
 		p:name="OstersBankI" p:possiblePlants="4"
@@ -2837,7 +3033,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="OstersBankIII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="OstersBankIII" p:possiblePlants="4"
@@ -2866,7 +3062,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="OstersBankII" class="emlab.gen.domain.sitelocation.Location"
 		p:name="OstersBankII" p:possiblePlants="3"
@@ -2895,7 +3091,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="OstersBankIV" class="emlab.gen.domain.sitelocation.Location"
 		p:name="OstersBankIV" p:possiblePlants="4"
@@ -2924,7 +3120,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<!-- Location Wind On- Shore  -->
 	<bean id="Hattum" class="emlab.gen.domain.sitelocation.Location"
@@ -2952,7 +3148,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Apeldoorn" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Apeldoorn" p:possiblePlants="1"
@@ -2979,7 +3175,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Didam" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Didam" p:possiblePlants="1"
@@ -3006,7 +3202,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Doetinchem" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Doetinchem" p:possiblePlants="1"
@@ -3033,7 +3229,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Elst" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Elst" p:possiblePlants="1"
@@ -3060,7 +3256,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Ede" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Ede" p:possiblePlants="1"
@@ -3087,7 +3283,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Wageningen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Wageningen" p:possiblePlants="2"
@@ -3114,7 +3310,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Houten" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Houten" p:possiblePlants="2"
@@ -3141,7 +3337,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Afsluitdijk" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Afsluitdijk" p:possiblePlants="3"
@@ -3168,7 +3364,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Veluwemeer" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Veluwemeer" p:possiblePlants="3"
@@ -3195,7 +3391,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Markermeer" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Markermeer" p:possiblePlants="3"
@@ -3222,7 +3418,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Flevopolder" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Flevopolder" p:possiblePlants="10"
@@ -3249,7 +3445,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DenHelder" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DenHelder" p:possiblePlants="4"
@@ -3276,10 +3472,10 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="KopNoordHolland" class="emlab.gen.domain.sitelocation.Location"
-		p:name="Kop Noord Holland" p:possiblePlants="10"
+		p:name="KopNoordHolland" p:possiblePlants="10"
 		p:plantPresent="0"
 		p:populationDensity="133"
 		p:wealth="14.5"
@@ -3303,7 +3499,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="OosterscheldeKering" class="emlab.gen.domain.sitelocation.Location"
 		p:name="OosterScheldeKering" p:possiblePlants="4"
@@ -3330,7 +3526,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Vlissingen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Vlissingen" p:possiblePlants="2"
@@ -3357,7 +3553,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="RotterdamHaven" class="emlab.gen.domain.sitelocation.Location"
 		p:name="RotterdamHaven" p:possiblePlants="4"
@@ -3384,7 +3580,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="NoordWestBrabant" class="emlab.gen.domain.sitelocation.Location"
 		p:name="NoordWestBrabant" p:possiblePlants="8"
@@ -3411,7 +3607,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Tholen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Tholen" p:possiblePlants="4"
@@ -3438,7 +3634,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Zierikzee" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Zierikzee" p:possiblePlants="4"
@@ -3465,7 +3661,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="BergenOpZoom" class="emlab.gen.domain.sitelocation.Location"
 		p:name="BergenOpZoom" p:possiblePlants="4"
@@ -3492,7 +3688,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Reimerswaal" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Reimerswaal" p:possiblePlants="4"
@@ -3519,7 +3715,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Panningen" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Panningen" p:possiblePlants="1"
@@ -3546,7 +3742,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Venlo" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Venlo" p:possiblePlants="1"
@@ -3573,7 +3769,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Maastricht" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Maastricht" p:possiblePlants="2"
@@ -3600,7 +3796,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	
 	<!-- present wind locations -->
@@ -3629,7 +3825,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Bunschoten" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Bunschoten" p:possiblePlants="2"
@@ -3656,7 +3852,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Dronten" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Dronten" p:possiblePlants="4"
@@ -3683,7 +3879,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Harselaar" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Harselaar" p:possiblePlants="1"
@@ -3710,7 +3906,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Lemmer" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Lemmer" p:possiblePlants="1"
@@ -3737,7 +3933,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Herbayum" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Herbayum" p:possiblePlants="2"
@@ -3764,7 +3960,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Middelburg" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Middelburg" p:possiblePlants="1"
@@ -3791,7 +3987,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Westwoud" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Westwoud" p:possiblePlants="1"
@@ -3818,7 +4014,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="WinsumRanum" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Winsum Ranum" p:possiblePlants="1"
@@ -3845,7 +4041,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="Zeewolde" class="emlab.gen.domain.sitelocation.Location"
 		p:name="Zeewolde" p:possiblePlants="1"
@@ -3872,7 +4068,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="DelfzijlWind" class="emlab.gen.domain.sitelocation.Location"
 		p:name="DelftzijlWind" p:possiblePlants="1"
@@ -3899,7 +4095,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="TerneuzeWind" class="emlab.gen.domain.sitelocation.Location"
 		p:name="TerneuzenWind" p:possiblePlants="1"
@@ -3926,7 +4122,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	<bean id="VelsenWind" class="emlab.gen.domain.sitelocation.Location"
 		p:name="VelsenWind" p:possiblePlants="1"
@@ -3953,7 +4149,7 @@
 		p:weightFactorCompensation="1"
 		p:weightFactorTechPref="0.6"
 		p:courtChance="0.5"
-		p:effectivenessCompensation="0.001">
+		p:effectivenessCompensation="0.001" p:locationFailureTimer="0" p:localPartyCompensation="0" p:locationFailure="1" p:totalCompensationPayed="0" p:permitTries="0" p:countPermitFailures="0">
 	</bean>
 	
 	
